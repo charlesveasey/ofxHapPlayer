@@ -58,6 +58,7 @@ public:
     virtual ofPixelFormat       getPixelFormat();
     virtual string              getMoviePath();
     virtual bool				getHapAvailable();
+	virtual bool				isHapQ();
 	
     //should implement!
     virtual float               getPosition();

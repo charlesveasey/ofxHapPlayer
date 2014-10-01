@@ -461,6 +461,20 @@ bool ofxHapPlayer::getHapAvailable()
 	return _hapAvailable;
 }
 
+bool ofxHapPlayer::isHapQ()
+{
+    if (_gWorld != NULL)
+    {
+        PixMapHandle pmap = GetGWorldPixMap((GWorldPtr)_gWorld);
+        if ((*pmap)->pixelFormat == kHapPixelFormatTypeYCoCg_DXT5)
+        {
+            return true;
+        }
+		return false;
+    }
+	return false;
+}
+
 ofTexture* ofxHapPlayer::getTexture()
 {
     if (_wantsUpdate && _gWorld != NULL)
